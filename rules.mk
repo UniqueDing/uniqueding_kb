@@ -16,4 +16,4 @@ PS2_ENABLE = yes
 PS2_DRIVER = interrupt
 
 RGBLIGHT_ENABLE = yes        # Enable keyboard RGB underglow
-RGBLIGHT_DRIVER = WS2812
+RGBLIGHT_DRIVER = ws2812
