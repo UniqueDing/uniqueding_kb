@@ -1,0 +1,25 @@
+if SHIELD_CHARYBDIS_CIRQUE_RIGHT
+
+    config ZMK_KEYBOARD_NAME
+        default "UniqueDing-KB"
+
+    config ZMK_SPLIT_BLE_ROLE_CENTRAL
+        default y
+
+endif
+
+if SHIELD_CHARYBDIS_CIRQUE_LEFT
+
+    config ZMK_KEYBOARD_NAME
+        default "UniqueDing-KB-slave"
+
+endif
+
+if SHIELD_CHARYBDIS_CIRQUE_LEFT || SHIELD_CHARYBDIS_CIRQUE_RIGHT
+
+    config ZMK_SPLIT
+        default y
+    config ZMK_USB
+        default y
+
+endif

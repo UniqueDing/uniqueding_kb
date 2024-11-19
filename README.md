@@ -1,22 +1,21 @@
 # UniqueDing Keyboard
 
-## datycl manuform 5x7 with trackpoint and rgblight
+## charybdis 5x6 with trackball
 
 ![img](keyboard.jpg)
 
-## make
+- Module use by dactyl_manuform_r_track
 
-* put code to qmk_firmware/keyboards/handwired/dactyl_manuform
+* Firmware use by zmk
 
-* `qmk compile -kb handwired/dactyl_manuform/uniqueding_kb -km default`
+* Board: nano_nice_v2
 
-## flash
-
-* `make handwired/dactyl_manuform/uniqueding_kb:default:avrdude-split-left`
-* `make handwired/dactyl_manuform/uniqueding_kb:default:avrdude-split-right`
+- trackball use by PMW3360
 
 ## reference
 
-* [https://github.com/abstracthat/dactyl-manuform](https://github.com/abstracthat/dactyl-manuform)
+- [https://github.com/Schievel1/dactyl_manuform_r_track](https://github.com/Schievel1/dactyl_manuform_r_track)
 
-* [https://github.com/qmk/qmk_firmware](https://github.com/qmk/qmk_firmware)
+* [https://zmk.dev/](https://zmk.dev)
+
+* [https://github.com/DoctorWangWang/charybdis-cirque-nano-zmk-config](https://github.com/DoctorWangWang/charybdis-cirque-nano-zmk-config)
