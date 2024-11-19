@@ -2,7 +2,7 @@
 
 ## charybdis 5x6 with trackball
 
-![img](keyboard.jpg)
+![img](charybdis_5x6_trackball.jpg)
 
 > branch charybdis_5x6_trackball
 
@@ -16,6 +16,6 @@
 
 ## dactyl manuform 5x7 with trackpoint and rgblight
 
-![img](keyboard.jpg)
+![img](dactyl_5x7_trackpoint.jpg)
 
 > branch dactyl_5x7_trackpoint
