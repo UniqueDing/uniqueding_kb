@@ -78,7 +78,7 @@
       >;
       trackball-bindings = <&tmv>;
 
-    }
+    };
 
     num_layer {
       label = "NUM";
@@ -91,7 +91,7 @@
                     &trans  &trans  &trans  &trans          &trans  &trans &trans
       >;
       trackball-bindings = <&tmv>;
-    }
+    };
 
     nav_layer {
       label = "NAV";
@@ -104,7 +104,7 @@
                     &trans  &trans  &trans  &trans          &trans  &trans &trans
       >;
       trackball-bindings = <&tmv>;
-    }
+    };
 
     fn_layer {
       label = "FN";
