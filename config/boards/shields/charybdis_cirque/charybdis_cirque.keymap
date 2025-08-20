@@ -61,7 +61,7 @@
 &mt LCTRL ESC &kp A    &kp R    &kp S    &kp T    &kp D        &kp H    &kp N    &kp E     &kp I    &kp O     &lt SYM SQT
 &kp LSHIFT    &kp Z    &kp X    &kp C    &kp V    &kp B        &kp K    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
-                &kp LC(LSHIFT) &kp LCTRL &mo MSE &kp LGUI            &kp NAV BSPC &lt FN DEL &kp ESC
+                &kp LC(LSHIFT) &kp LCTRL &mo MSE &kp LGUI            &lt NAV BSPC &lt FN DEL &kp ESC
       >;
       trackball-bindings = <&tmv>;
     };
@@ -119,17 +119,17 @@
       trackball-bindings = <&tsl>;
     };
 
+/* &none    &none    &none   &none   &none   &none        &none   &mwh SCROLL_UP &mmv MOVE_UP &mwh SCROLL_DOWN &none &none */
+/* &none    &none    &none   &none   &none   &none        &none   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none */
     mouse_layer {
       label = "MSE";
       bindings = <
 &none    &none    &none   &none   &none   &none        &none   &none    &none    &none    &none    &none
-/* &none    &none    &none   &none   &none   &none        &none   &mwh SCROLL_UP &mmv MOVE_UP &mwh SCROLL_DOWN &none &none */
-/* &none    &none    &none   &none   &none   &none        &none   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none */
 &none    &none    &none   &none   &none   &none        &none   &kp UP   &kp DOWN &none    &none  &none
 &none    &none    &none   &none   &none   &none        &none   &mkp LCLK &mkp RCLK &none  &none  &none
 &none    &none    &none   &none   &none   &none        &none   &mkp MB4  &mkp MB5 &none    &none    &none
-                  &none   &none   &none   &none                &none   &none   &none
-                  &none   &none   &none   &none                &none     &none    &none
+                  &none   &none   &none   &none                &none    &none   &none
+                  &none   &none   &none   &none                &none    &none    &none
       >;
       trackball-bindings = <&tmv>;
     };
