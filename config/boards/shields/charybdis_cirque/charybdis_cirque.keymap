@@ -11,10 +11,10 @@
 /* #define MMV_L MOVE_HOR(-651) */
 /* #define MMV_R MOVE_HOR(650) */
 /**/
-/* &mmv { */
-/*         time-to-max-speed-ms = <500>; */
-/*         acceleration-exponent=<1>; */
-/* }; */
+&mmv {
+        time-to-max-speed-ms = <500>;
+        acceleration-exponent=<1>;
+};
 /**/
 /* // mouse wheel settings */
 /* #define MWH_U SCROLL_VERT(15) */
@@ -22,10 +22,10 @@
 /* #define MWH_L SCROLL_HOR(-15) */
 /* #define MWH_R SCROLL_HOR(15) */
 /**/
-/* &mwh { */
-/*         time-to-max-speed-ms = <2000>; */
-/*         acceleration-exponent=<0>; */
-/* }; */
+&mwh {
+        time-to-max-speed-ms = <2000>;
+        acceleration-exponent=<0>;
+};
 
 #define DEF 0
 #define COL 1
@@ -48,7 +48,7 @@
 &kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K     &kp L    &kp SEMI  &kp SQT
 &kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
-                &kp LC(LSHIFT) &kp LCTRL  &kp LGUI  &mo MSE            &kp RALT   &lt FN DEL  &kp ESC
+                &kp LC(LSHIFT) &kp LCTRL &mo MSE &kp LGUI            &kp RALT   &lt FN DEL  &kp ESC
       >;
       trackball-bindings = <&tmv>;
     };
@@ -61,7 +61,7 @@
 &mt LCTRL ESC &kp A    &kp R    &kp S    &kp T    &kp D        &kp H    &kp N    &kp E     &kp I    &kp O     &lt SYM SQT
 &kp LSHIFT    &kp Z    &kp X    &kp C    &kp V    &kp B        &kp K    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
-                &kp LC(LSHIFT) &kp LCTRL  &kp LGUI  &mo MSE            &lt NUM BSPC   &lt FN DEL  &kp ESC
+                &kp LC(LSHIFT) &kp LCTRL &mo MSE &kp LGUI            &kp RALT   &lt FN DEL  &kp ESC
       >;
       trackball-bindings = <&tmv>;
     };
@@ -123,8 +123,8 @@
       label = "MSE";
       bindings = <
 &none    &none    &none   &none   &none   &none        &none   &none    &none    &none    &none    &none
-&none    &none    &none   &none   &none   &none        &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT &none &none
-&none    &none    &none   &none   &none   &none        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
+&none    &none    &none   &none   &none   &none        &none   &mwh SCROLL_UP &mwv MOVE_UP &mwh SCROLL_DOWN &none &none
+&none    &none    &none   &none   &none   &none        &none   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none
 &none    &none    &none   &none   &none   &none        &none   &mkp MB4 &mkp MB5 &none    &none    &none
                   &none   &none   &none   &none                &mkp LCLK &none   &none
                   &none   &none   &none   &none                &mkp RCLK &none    &none
