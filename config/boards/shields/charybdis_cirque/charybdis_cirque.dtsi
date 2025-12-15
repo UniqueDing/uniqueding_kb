@@ -26,13 +26,12 @@
     label = "KSCAN";
 
     diode-direction = "col2row";
-            row-gpios= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D4
-                        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
-                        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
-                        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
-                        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
-                        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // E6
-        ;
+    row-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* D4 */
+                <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* C6 */
+                <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* C7 */
+                <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* D7 */
+                <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* D6 */
+                <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  /* E6 */
 	};
 	
   mouse_listener {
@@ -68,7 +67,7 @@
 		reg = <0>;
 		spi-max-frequency = <2000000>;
 
-		// pmw3360 driver parameters
+		/* pmw3360 driver parameters */
 		irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		cpi = <600>;
 		rotate-90;
