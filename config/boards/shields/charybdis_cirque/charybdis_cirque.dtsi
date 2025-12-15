@@ -47,7 +47,7 @@
 };
 
 &spi0 {
-	status = "diskabled";
+	status = "disabled";
   miso-pin = <17>;
   mosi-pin = <20>;
   sck-pin = <31>;
