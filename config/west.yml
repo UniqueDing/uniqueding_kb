@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-pmw3360
       remote: george-norton
-      revision: main
+      revision: v0.3
   self:
     path: config
