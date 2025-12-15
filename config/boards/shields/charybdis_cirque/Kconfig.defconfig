@@ -19,7 +19,7 @@ if SHIELD_CHARYBDIS_CIRQUE_LEFT || SHIELD_CHARYBDIS_CIRQUE_RIGHT
 
     config ZMK_SPLIT
         default y
-    config ZMK_USB
-        default y
+    # config ZMK_USB
+    #     default y
 
 endif
