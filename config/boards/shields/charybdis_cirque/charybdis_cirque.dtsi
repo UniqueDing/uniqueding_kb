@@ -46,20 +46,11 @@
 	
 };
 
-&pinctrl {
-	spi0_default: spi0_default {
-		group1 {
-			pinmux = <NRF_P0_31>, <NRF_P0_20>, <NRF_P0_21>;
-		};
-		group2 {
-			pinmux = <NRF_P0_17>;
-			input-enable;
-		};
-	};
-};
-
 &spi0 {
-	status = "disabled";
+	status = "diskabled";
+  miso-pin = <17>;
+  mosi-pin = <20>;
+  sck-pin = <31>;
 	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
 	mouse: mouse@0 {
 		compatible = "pixart,pmw3360";
