@@ -49,10 +49,10 @@
 &pinctrl {
 	spi0_default: spi0_default {
 		group1 {
-			pinmux = <SPI0_CSN_P21>, <SPI0_SCK_P31>, <SPI0_TX_P20>;
+			pinmux = <NRF_P0_31>, <NRF_P0_20>, <NRF_P0_21>;
 		};
 		group2 {
-			pinmux = <SPI0_RX_P17>;
+			pinmux = <NRF_P0_17>;
 			input-enable;
 		};
 	};
