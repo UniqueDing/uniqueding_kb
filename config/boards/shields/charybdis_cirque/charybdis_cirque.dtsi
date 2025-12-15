@@ -50,7 +50,7 @@
 &pinctrl {
 	spi0_default: spi0_default {
 		group1 {
-			pinmux = <SPI0_CSN_P21>, <SPI0_SCK_P31>, <SPI0_TX_P20>; // chip select, clock, mosi, miso
+			pinmux = <SPI0_CSN_P21>, <SPI0_SCK_P31>, <SPI0_TX_P20>;
 		};
 		group2 {
 			pinmux = <SPI0_RX_P17>;
