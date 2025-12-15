@@ -13,9 +13,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: charybdis_cirque
     shield: charybdis_cirque_left
-  - board: nice_nano_v2
+  - board: charybdis_cirque
     shield: charybdis_cirque_right
-  - board: nice_nano_v2
+  - board: charybdis_cirque
     shield: settings_reset
