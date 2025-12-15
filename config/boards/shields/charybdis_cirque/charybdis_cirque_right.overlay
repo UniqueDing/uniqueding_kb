@@ -23,11 +23,3 @@
 &mouse {
   status = "okay";
 };
-
-/* &nice_nano_spi { */
-/*     status = "okay"; */
-/* }; */
-/**/
-/* &trackball { */
-/*     status = "okay"; */
-/* }; */
