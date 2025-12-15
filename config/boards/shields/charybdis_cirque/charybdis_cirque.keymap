@@ -46,7 +46,7 @@
       input-processors = <&zip_xy_scaler 3 2>;
 
       scroller {
-          layers = <SCROLL>;
+          layers = <MSE>;
           input-processors = <&zip_xy_to_scroll_mapper>;
       };
   };
