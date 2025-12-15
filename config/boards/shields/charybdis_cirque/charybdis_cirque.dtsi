@@ -21,29 +21,62 @@
     >;
   };
 
-  kscan0: kscan {        
-  compatible = "zmk,kscan-gpio-matrix";
-  label = "KSCAN";
+  kscan0: kscan {
+    compatible = "zmk,kscan-gpio-matrix";
+    label = "KSCAN";
 
-  diode-direction = "col2row";
-          row-gpios= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D4
-                      , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
-                      , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
-                      , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
-                      , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
-                      , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // E6
-      ;
+    diode-direction = "col2row";
+            row-gpios= <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D4
+                        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
+                        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // C6
+                        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
+                        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // D7
+                        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // E6
+        ;
 	};
 	
+  mouse_listener {
+		compatible = "zmk,input-listener";
+		device = <&mouse>;
+	};
 
-  trackballs {
-		compatible = "zmk,keymap-trackballs";
-		trackballs = <&trackball>;
-	};	
+	/*  trackballs { */
+	/* 	compatible = "zmk,keymap-trackballs"; */
+	/* 	trackballs = <&trackball>; */
+	/* };	 */
 	
 };
 
+&pinctrl {
+	spi0_default: spi0_default {
+		group1 {
+      // chip select, clock, mosi, miso
+			pinmux = <SPI0_CSN_P21>, <SPI0_SCK_P31>, <SPI0_TX_P20>;
+		};
+		group2 {
+			pinmux = <SPI0_RX_P17>;
+			input-enable;
+		};
+	};
+};
 
+&spi0 {
+	status = "disabled";
+	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
+	mouse: mouse@0 {
+		compatible = "pixart,pmw3360";
+		status = "disabled";
+		reg = <0>;
+		spi-max-frequency = <2000000>;
+
+		// pmw3360 driver parameters
+		irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+		cpi = <600>;
+		rotate-90;
+	};
+};
+
+/*
 &nice_nano_spi {
   compatible = "nordic,nrf-spim";
   status = "disabled";
@@ -62,4 +95,4 @@
       scroll-layer = <2>;
   };
 };
-
+*/
