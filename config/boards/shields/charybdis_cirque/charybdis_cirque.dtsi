@@ -48,9 +48,9 @@
 
 &spi0 {
 	status = "disabled";
-  miso-pin = <17>;
-  mosi-pin = <20>;
-  sck-pin = <31>;
+  psel-miso = <17>;
+  psel-mosi = <20>;
+  psel-sck = <31>;
 	cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
 	mouse: mouse@0 {
 		compatible = "pixart,pmw3360";
