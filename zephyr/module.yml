@@ -1,4 +1,4 @@
-name: uniqueding-kb
+name: uniqueding_kb
 build:
   depends:
     - zmk-driver-pmw3360

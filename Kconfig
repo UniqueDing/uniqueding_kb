@@ -1,0 +1,1 @@
+source "modules/hardware/zmk-driver-pmw3360/Kconfig"

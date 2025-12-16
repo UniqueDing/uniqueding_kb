@@ -1,6 +1,0 @@
-config BOARD_UNIQUEDING_KB
-    bool "uniqueding_kb"
-    select ZMK_MOUSE
-    select pinctrl
-    select INPUT
-    select INPUT_PIXART_PMW3360
