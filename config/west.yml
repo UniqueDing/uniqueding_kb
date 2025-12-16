@@ -12,5 +12,3 @@ manifest:
     - name: zmk-driver-pmw3360
       remote: george-norton
       revision: v0.3
-  self:
-    path: config
