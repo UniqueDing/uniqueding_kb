@@ -23,7 +23,7 @@
 
   kscan0: kscan {
     compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
+    /* label = "KSCAN"; */
 
     diode-direction = "col2row";
     row-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  /* D4 */
@@ -59,11 +59,11 @@
 &spi0 {
     pinctrl-0 = <&spi0_default>;
     pinctrl-names = "default";
-    status = "disabled";
+    status = "okay";
     cs-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
     mouse: mouse@0 {
         compatible = "pixart,pmw3360";
-        status = "disabled";
+        status = "okay";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
