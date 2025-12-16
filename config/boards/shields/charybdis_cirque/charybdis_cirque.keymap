@@ -51,16 +51,31 @@
       };
   };
 
-  /* behaviors { */
-  /*  ec_s: mouse_scroll { */
-  /*               compatible = "zmk,behavior-input-two-axis"; */
-  /*               #binding-cells = <1>; */
-  /*               x-input-code = <INPUT_REL_HWHEEL>; */
-  /*               y-input-code = <INPUT_REL_WHEEL>; */
-  /*               time-to-max-speed-ms = <177>; */
-  /*               acceleration-exponent = <0>; */
-  /*       }; */
-  /* }; */
+  behaviors {
+    ec_s: mouse_scroll {
+      compatible = "zmk,behavior-input-two-axis";
+      #binding-cells = <1>;
+      x-input-code = <INPUT_REL_HWHEEL>;
+      y-input-code = <INPUT_REL_WHEEL>;
+      time-to-max-speed-ms = <177>;
+      acceleration-exponent = <0>;
+    };
+    rot_enc: sensor_rotate {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&ec_s MOVE_Y(-37)>, <&ec_s MOVE_Y(37)>;
+      tap-ms = <65>;
+    };
+     // Modified layer tap that supports mouse keys.
+    lmkt: layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&mkp>;
+      display-name = "Layer-Tap";
+    };
+  };
 
   keymap {
     compatible = "zmk,keymap";
@@ -74,6 +89,7 @@
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
                 &kp LC(LSHIFT) &kp LCTRL &kp LGUI &mo MSE            &lt NUM BSPC &lt FN DEL &kp ESC
       >;
+      sensor-bindings = < &rot_enc >;
       /* trackball-bindings = <&tmv>; */
     };
 
