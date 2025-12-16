@@ -1,4 +1,4 @@
-config SHIELD_CHARYBDIS_CIRQUE_RIGHT
+config BOARD_UNIQUEDING_KB
     select ZMK_MOUSE
     select pinctrl
     select INPUT
