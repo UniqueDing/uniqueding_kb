@@ -3,6 +3,5 @@ build:
   depends:
     - zmk-driver-pmw3360
   cmake: .
-  kconfig: Kconfig
   settings:
     board_root: .
