@@ -3,7 +3,3 @@ config SHIELD_CHARYBDIS_CIRQUE_LEFT
 
 config SHIELD_CHARYBDIS_CIRQUE_RIGHT
     def_bool $(shields_list_contains,charybdis_cirque_right)
-    select ZMK_MOUSE
-    select pinctrl
-    select INPUT
-    select INPUT_PIXART_PMW3360
