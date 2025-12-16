@@ -1,4 +1,5 @@
 config BOARD_UNIQUEDING_KB
+    bool "uniqueding_kb"
     select ZMK_MOUSE
     select pinctrl
     select INPUT
