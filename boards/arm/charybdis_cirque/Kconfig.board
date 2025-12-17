@@ -1,8 +1,8 @@
-config SHIELD_CHARYBDIS_CIRQUE_LEFT
+config BOARD_CHARYBDIS_CIRQUE_LEFT
     bool "charybdis_cirque_left"
     depends on SOC_NRF52840_QIAA
 
-config SHIELD_CHARYBDIS_CIRQUE_RIGHT
+config BOARD_CHARYBDIS_CIRQUE_RIGHT
     bool "charybdis_cirque_right"
     depends on SOC_NRF52840_QIAA
     select ZMK_MOUSE
