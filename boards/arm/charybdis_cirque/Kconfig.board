@@ -1,8 +1,8 @@
 config SHIELD_CHARYBDIS_CIRQUE_LEFT
-    def_bool $(shields_list_contains,charybdis_cirque_left)
+    bool "charybdis_cirque_left"
 
 config SHIELD_CHARYBDIS_CIRQUE_RIGHT
-    def_bool $(shields_list_contains,charybdis_cirque_right)
+    bool "charybdis_cirque_right"
     select ZMK_MOUSE
     select pinctrl
     select INPUT
