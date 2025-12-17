@@ -7,7 +7,7 @@
 
 / {
   model = "charybdis_cirque";
-  compatible = "nrf52840_qiaa","charybdis_cirque";
+  compatible = "charybdis_cirque", "nordic,nrf52840";
 
   chosen {
     zmk,kscan = &kscan0;
