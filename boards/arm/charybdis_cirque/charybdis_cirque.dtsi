@@ -10,7 +10,6 @@
   compatible = "charybdis_cirque", "nordic,nrf52840";
 
   chosen {
-    zmk,kscan = &kscan0;
     /* zephyr,code-partition = &code_partition; */
     zephyr,sram = &sram0;
     /* zephyr,flash = &flash0; */
