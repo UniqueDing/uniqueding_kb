@@ -15,6 +15,6 @@
 include:
   - board: charybdis_cirque_left
   - board: charybdis_cirque_right
-    snippet: zmk-usb-logging
+    # snippet: zmk-usb-logging
   - board: charybdis_cirque_right
     shield: settings_reset
