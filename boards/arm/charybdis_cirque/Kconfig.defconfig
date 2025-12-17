@@ -8,17 +8,28 @@ if BOARD_CHARYBDIS_CIRQUE_RIGHT
 
 endif
 
-if BOARD_CHARYBDIS_CIRQUE_LEFT
-    config ZMK_KEYBOARD_NAME
-        default "uniqueding-kbs"
-
-endif
-
 if BOARD_CHARYBDIS_CIRQUE_LEFT || BOARD_CHARYBDIS_CIRQUE_RIGHT
+  config BOARD
+    default "charybdis-cirque"
 
-    config ZMK_SPLIT
-        default y
-    # config ZMK_USB
-    #     default y
+  config BOARD_ENABLE_DCDC
+    bool "Enable DCDC mode"
+    select SOC_DCDC_NRF52X
+    default y
+
+  config BOARD_ENABLE_DCDC_HV
+    bool "Enable High Voltage DCDC converter"
+    default y
+    select SOC_DCDC_NRF52X_HV
+    depends on (BOARD_EYELASH_CORNE_LEFT || BOARD_EYELASH_CORNE_RIGHT)
+
+  config ZMK_SLEEP
+    default y
+
+  config ZMK_SPLIT
+    default y
+
+  config BT_CTLR
+    default BT
 
 endif
