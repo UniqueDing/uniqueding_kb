@@ -1,9 +1,13 @@
 config BOARD_CHARYBDIS_CIRQUE_LEFT
-    bool "charybdis_cirque_left"
+    bool "charybdis_cirque left"
     depends on SOC_NRF52840_QIAA
+    select ZMK_MOUSE
+    select pinctrl
+    select INPUT
+    select INPUT_PIXART_PMW3360
 
 config BOARD_CHARYBDIS_CIRQUE_RIGHT
-    bool "charybdis_cirque_right"
+    bool "charybdis_cirque right"
     depends on SOC_NRF52840_QIAA
     select ZMK_MOUSE
     select pinctrl
