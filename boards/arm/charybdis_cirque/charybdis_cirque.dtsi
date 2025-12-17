@@ -1,10 +1,10 @@
 /dts-v1/;
 
 #include <nordic/nrf52840_qiaa.dtsi>
-#include "charybdis_cirque-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <freq.h>
+/* #include <freq.h> */
 
+#include "charybdis_cirque-layouts.dtsi"
 / {
   model = "charybdis_cirque";
   compatible = "charybdis_cirque", "nordic,nrf52840";
