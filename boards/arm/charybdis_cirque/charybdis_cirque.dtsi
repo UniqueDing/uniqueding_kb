@@ -63,12 +63,12 @@
       , <&gpio1 6  (GPIO_ACTIVE_HIGH)>
     ;
 	};
-	/*
+
 	 mouse_listener {
 		compatible = "zmk,input-listener";
 		device = <&mouse>;
 	};
-*/
+
 };
 
 &flash0 {
@@ -106,7 +106,7 @@
         };
     };
 };
-/*
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -142,7 +142,7 @@
         rotate-90;
     };
 };
-*/
+
 /*
 &nice_nano_spi {
   compatible = "nordic,nrf-spim";
