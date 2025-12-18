@@ -1,6 +1,6 @@
 name: uniqueding_kb
 build:
-  depends:
-    - zmk-driver-pmw3360
+  #depends:
+   # - zmk-driver-pmw3360
   settings:
     board_root: .
