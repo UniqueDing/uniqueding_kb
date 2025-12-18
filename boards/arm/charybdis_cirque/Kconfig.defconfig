@@ -8,7 +8,7 @@ endif
 
 if BOARD_CHARYBDIS_CIRQUE_LEFT || BOARD_CHARYBDIS_CIRQUE_RIGHT
   config BOARD
-    default "charybdis-cirque"
+    default "charybdis_cirque"
 
   config BOARD_ENABLE_DCDC
     bool "Enable DCDC mode"
