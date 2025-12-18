@@ -42,7 +42,7 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 / {
-  mouse_listener {
+  /*mouse_listener {
       input-processors = <&zip_xy_scaler 3 2>;
 
       scroller {
@@ -75,7 +75,7 @@
       bindings = <&mo>, <&mkp>;
       display-name = "Layer-Tap";
     };
-  };
+  };*/
 
   keymap {
     compatible = "zmk,keymap";
@@ -89,7 +89,7 @@
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
                 &kp LC(LSHIFT) &kp LCTRL &kp LGUI &mo MSE            &lt NUM BSPC &lt FN DEL &kp ESC
       >;
-      sensor-bindings = < &rot_enc >;
+      //sensor-bindings = < &rot_enc >;
       /* trackball-bindings = <&tmv>; */
     };
 
