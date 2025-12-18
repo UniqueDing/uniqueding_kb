@@ -8,4 +8,4 @@ config BOARD_CHARYBDIS_CIRQUE_RIGHT
     select ZMK_MOUSE
     select pinctrl
     select INPUT
-    select INPUT_PIXART_PMW3360
+    3 select INPUT_PIXART_PMW3360
