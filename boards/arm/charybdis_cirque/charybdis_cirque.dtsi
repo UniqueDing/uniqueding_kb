@@ -7,7 +7,7 @@
 #include "charybdis_cirque-layouts.dtsi"
 / {
   model = "charybdis_cirque";
-  compatible = "charybdis_cirque", "nordic,nrf52840";
+  compatible = "charybdis,cirque";
 
   chosen {
     zephyr,code-partition = &code_partition;
