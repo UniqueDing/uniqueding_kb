@@ -1,4 +1,4 @@
-name: uniqueding_kb
+name: charybdis_cirque
 build:
   #depends:
    # - zmk-driver-pmw3360
