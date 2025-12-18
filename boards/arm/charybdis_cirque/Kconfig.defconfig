@@ -1,6 +1,6 @@
 if BOARD_CHARYBDIS_CIRQUE_RIGHT
     config ZMK_KEYBOARD_NAME
-        default "uniqueding-kb"
+        default "charybdis_cirque"
 
     config ZMK_SPLIT_BLE_ROLE_CENTRAL
         default y
