@@ -42,7 +42,7 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 / {
-  /*mouse_listener {
+  mouse_listener {
       input-processors = <&zip_xy_scaler 3 2>;
 
       scroller {
@@ -50,7 +50,7 @@
           input-processors = <&zip_xy_to_scroll_mapper>;
       };
   };
-
+/*
   behaviors {
     ec_s: mouse_scroll {
       compatible = "zmk,behavior-input-two-axis";
