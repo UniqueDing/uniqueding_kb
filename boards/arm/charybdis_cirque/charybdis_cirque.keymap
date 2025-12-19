@@ -9,65 +9,33 @@
 #include <input/processors.dtsi>
 
 
-// mouse move settings
-/* #define MMV_U MOVE_VERT(-650) */
-/* #define MMV_D MOVE_VERT(650) */
-/* #define MMV_L MOVE_HOR(-651) */
-/* #define MMV_R MOVE_HOR(650) */
-/**/
-/* &mmv { */
-/*         time-to-max-speed-ms = <500>; */
-/*         acceleration-exponent=<1>; */
-/* }; */
-/**/
-/* // mouse wheel settings */
-/* #define MWH_U SCROLL_VERT(15) */
-/* #define MWH_D SCROLL_VERT(-15) */
-/* #define MWH_L SCROLL_HOR(-15) */
-/* #define MWH_R SCROLL_HOR(15) */
-/**/
-/* &mwh { */
-/*         time-to-max-speed-ms = <2000>; */
-/*         acceleration-exponent=<0>; */
-/* }; */
-
 #define DEF 0
-#define COL 1
+#define QWE 1
 #define SYM 2
 #define NUM 3
 #define NAV 4
 #define FN  5
 #define MSE 6
+#define SCR 7
 
 #define AS(keycode) &as LS(keycode) keycode
 
+&mmv_input_listener {
+  input-processors = <&zip_temp_layer MSE 1000>;
+}
+
 / {
   mouse_listener {
-      input-processors = <&zip_xy_scaler 3 2>;
+    input-processors = <&zip_xy_scaler 3 2>;
 
-      scroller {
-          layers = <MSE>;
-          input-processors = <&zip_xy_to_scroll_mapper>;
-      };
+    scroller {
+      layers = <SCR>;
+      input-processors = <&zip_xy_to_scroll_mapper>;
+    };
   };
-/*
+
   behaviors {
-    ec_s: mouse_scroll {
-      compatible = "zmk,behavior-input-two-axis";
-      #binding-cells = <1>;
-      x-input-code = <INPUT_REL_HWHEEL>;
-      y-input-code = <INPUT_REL_WHEEL>;
-      time-to-max-speed-ms = <177>;
-      acceleration-exponent = <0>;
-    };
-    rot_enc: sensor_rotate {
-      compatible = "zmk,behavior-sensor-rotate";
-      #sensor-binding-cells = <0>;
-      bindings = <&ec_s MOVE_Y(-37)>, <&ec_s MOVE_Y(37)>;
-      tap-ms = <65>;
-    };
-     // Modified layer tap that supports mouse keys.
-    lmkt: layer_tap {
+    ltm: layer_tap_mouse {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-preferred";
@@ -75,26 +43,12 @@
       bindings = <&mo>, <&mkp>;
       display-name = "Layer-Tap";
     };
-  };*/
+  }
 
   keymap {
     compatible = "zmk,keymap";
     default_layer {
       label = "DEF";
-      bindings = <
-&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
-&kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
-&kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K     &kp L    &kp SEMI  &kp SQT
-&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
-                &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
-                &kp LC(LSHIFT) &kp LCTRL &kp LGUI &mo MSE            &lt NUM BSPC &lt FN DEL &kp ESC
-      >;
-      //sensor-bindings = < &rot_enc >;
-      /* trackball-bindings = <&tmv>; */
-    };
-
-    colmak_layer {
-      label = "COL";
       bindings = <
 &kp GRAVE     &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
 &lt NAV TAB   &kp Q    &kp W    &kp F    &kp P    &kp G        &kp J    &kp L    &kp U     &kp Y    &kp SEMI  &kp BSLH
@@ -103,7 +57,18 @@
                 &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
                 &kp LC(LSHIFT) &kp LCTRL &kp LGUI &mo MSE            &lt NUM BSPC &lt FN DEL &kp ESC
       >;
-      /* trackball-bindings = <&tmv>; */
+    };
+
+    qwerty_layer {
+      label = "QWE";
+      bindings = <
+&kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &kp N8    &kp N9   &kp N0    &kp BSPC
+&kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
+&kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K     &kp L    &kp SEMI  &kp SQT
+&kp LSHIFT &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
+                &kp LBKT   &kp RBKT   &kp SPACE  &kp LALT            &kp ENTER  &kp MINUS  &kp EQUAL
+                &kp LC(LSHIFT) &kp LCTRL &kp LGUI &mo MSE            &lt NUM BSPC &lt FN DEL &kp ESC
+      >;
     };
 
     symbol_layer {
@@ -116,8 +81,6 @@
                     &none   &none   &trans  &trans           &trans  &none  &none
                     &trans  &trans  &trans  &trans           &trans  &trans &trans
       >;
-      /* trackball-bindings = <&tmv>; */
-
     };
 
     num_layer {
@@ -130,7 +93,6 @@
                     &none   &none   &trans  &trans          &trans  &none  &none
                     &trans  &trans  &trans  &trans          &trans  &trans &trans
       >;
-      /* trackball-bindings = <&tmv>; */
     };
 
     nav_layer {
@@ -143,36 +105,42 @@
                     &none   &none   &trans  &trans          &trans  &none  &none
                     &trans  &trans  &trans  &trans          &trans  &trans &trans
       >;
-      /* trackball-bindings = <&tmv>; */
     };
 
     fn_layer {
       label = "FN";
       bindings = <
 &none    &none    &none   &none   &none   &none         &none   &none   &none   &none   &none   &none
-&none    &none    &none   &none   &none   &none         &to COL &to DEF &none   &none   &none   &none
+&none    &none    &none   &none   &none   &none         &to QWE &to DEF &none   &none   &none   &none
 &none    &none    &none   &none   &none   &none         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
 &none    &none    &none   &none   &none   &none         &out OUT_BLE &out OUT_USB &none &none &none &none
                   &none   &none   &none   &none                 &none   &none   &none
                   &none   &none   &none   &none                 &none   &none   &none
       >;
-      /* trackball-bindings = <&tsl>; */
     };
 
-/* &none    &none    &none   &none   &none   &none        &none   &mwh SCROLL_UP &mmv MOVE_UP &mwh SCROLL_DOWN &none &none */
-/* &none    &none    &none   &none   &none   &none        &none   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none */
     mouse_layer {
       label = "MSE";
       bindings = <
 &none    &none    &none   &none   &none   &none        &none   &none    &none    &none    &none    &none
-&none    &none    &none   &none   &none   &none        &none   &kp UP   &kp DOWN &none    &none  &none
-&none    &none    &none   &none   &none   &none        &none   &mkp LCLK &mkp RCLK &none  &none  &none
+&none    &none    &none   &none   &none   &none        &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT    &none  &none
+&none    &none    &none   &none   &none   &none        &none   &mkp LCLK &ltm SCR MCLK &mkp RCLK   &none  &none
 &none    &none    &none   &none   &none   &none        &none   &mkp MB4  &mkp MB5 &none    &none    &none
                   &none   &none   &none   &none                &none    &none   &none
                   &none   &none   &none   &none                &none    &none    &none
       >;
-      /* trackball-bindings = <&tmv>; */
     };
 
+    scroll_layer {
+      label = "SCR";
+      bindings = <
+&none    &none    &none   &none   &none   &none        &none   &none    &none    &none    &none    &none
+&none    &none    &none   &none   &none   &none        &msc SCRL_LEFT &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_RIGHT    &none  &none
+&none    &none    &none   &none   &none   &none        &none   &mkp LCLK &ltm SCR MCLK &mkp RCLK   &none  &none
+&none    &none    &none   &none   &none   &none        &none   &mkp MB4  &mkp MB5 &none    &none    &none
+                  &none   &none   &none   &none                &none    &none   &none
+                  &none   &none   &none   &none                &none    &none    &none
+      >;
+    };
    };
 };

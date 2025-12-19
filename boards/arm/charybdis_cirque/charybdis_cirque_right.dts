@@ -3,7 +3,7 @@
 &default_transform {
     col-offset = <6>;
 };
-/*
+
 &spi0 {
   status = "okay";
 };
@@ -11,4 +11,3 @@
 &mouse {
   status = "okay";
 };
-*/
