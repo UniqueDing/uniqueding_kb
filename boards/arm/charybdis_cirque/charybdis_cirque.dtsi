@@ -166,14 +166,14 @@
 };
 
 &i2c1 {
-  status = "okay";
+  status = "disabled";
   compatible = "nordic,nrf-twim";
   pinctrl-0 = <&i2c1_default>;
   pinctrl-1 = <&i2c1_sleep>;
   pinctrl-names = "default", "sleep";
   clock-frequency = <I2C_BITRATE_FAST>;
   tps43: iqs5xx@74 {
-    status = "okay";
+    status = "disabled";
     compatible = "azoteq,iqs5xx";
     reg = <0x74>;
 

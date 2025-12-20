@@ -12,6 +12,10 @@
   status = "okay";
 };
 
-/* &tps43 { */
-/*   status = "okay"; */
-/* }; */
+&i2c1 {
+  status = "okay";
+};
+
+&tps43 {
+  status = "okay";
+};
