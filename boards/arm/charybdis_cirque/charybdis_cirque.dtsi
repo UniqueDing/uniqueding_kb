@@ -64,10 +64,15 @@
     ;
 	};
 
-	 mouse_listener {
+	mouse_listener {
 		compatible = "zmk,input-listener";
 		device = <&mouse>;
 	};
+
+  tps43_input: tps43_input {
+    compatible = "zmk,input-listener";
+    device = <&tps43>;
+  };
 
 };
 
@@ -109,19 +114,33 @@
 
 &pinctrl {
     spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 20)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 17)>;
-        };
+      group1 {
+        psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 20)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+      };
     };
     spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 20)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 17)>;
-            low-power-enable;
-        };
+      group1 {
+        psels = <NRF_PSEL(SPIM_SCK, 0, 31)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 20)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+        low-power-enable;
+      };
+    };
+    i2c0_default: i2c0_default {
+      group1 {
+        psels = <NRF_PSEL(TWIM_SDA, 1, 1)>,
+                <NRF_PSEL(TWIM_SCL, 1, 2)>;
+      };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+      group1 {
+        psels = <NRF_PSEL(TWIM_SDA, 1, 1)>,
+                <NRF_PSEL(TWIM_SCL, 1, 2)>;
+        low-power-enable;
+      };
     };
 };
 
@@ -141,6 +160,36 @@
     cpi = <600>;
     invert-x;
     //rotate-90;
+  };
+};
+
+&i2c0 {
+  status = "disabled";
+  tps43: iqs5xx@74 {
+    status = "disabled";
+    compatible = "azoteq,iqs5xx";
+    reg = <0x74>;
+
+    reset-gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
+    rdy-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+
+    /*
+      * Potentially non-exhaustive list of configuration options.
+      * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
+      */
+    one-finger-tap;
+    press-and-hold;
+    press-and-hold-time = <250>;
+    two-finger-tap;
+
+    scroll;
+    natural-scroll-y;
+    natural-scroll-x;
+
+    bottom-beta = <5>;
+    stationary-threshold = <5>;
+
+    switch-xy;
   };
 };
 

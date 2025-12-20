@@ -2,5 +2,6 @@ name: charybdis_cirque
 build:
   depends:
     - zmk-driver-pmw3360
+    - zmk-driver-azoteq-iqs5xx
   settings:
     board_root: .
