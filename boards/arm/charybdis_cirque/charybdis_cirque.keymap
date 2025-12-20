@@ -26,7 +26,7 @@
 
 / {
   mouse_listener {
-    input-processors = <&zip_xy_scaler 3 2>;
+    input-processors = <&zip_xy_scaler 3 6>;
 
     scroller {
       layers = <SCR>;
