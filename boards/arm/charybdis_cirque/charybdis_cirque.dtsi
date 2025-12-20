@@ -179,10 +179,6 @@
     reset-gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
     rdy-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 
-    /*
-      * Potentially non-exhaustive list of configuration options.
-      * See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
-      */
     one-finger-tap;
     press-and-hold;
     press-and-hold-time = <250>;
