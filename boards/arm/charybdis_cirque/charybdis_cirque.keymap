@@ -22,7 +22,7 @@
 
 &mmv_input_listener {
   input-processors = <&zip_temp_layer MSE 1000>;
-}
+};
 
 / {
   mouse_listener {
