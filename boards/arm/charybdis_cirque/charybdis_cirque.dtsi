@@ -163,6 +163,7 @@
   };
 };
 
+/*
 &i2c0 {
   status = "okay";
   compatible = "nordic,nrf-twim";
@@ -197,6 +198,7 @@
     switch-xy;
   };
 };
+*/
 
 
 &adc {
