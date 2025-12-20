@@ -12,6 +12,6 @@
   status = "okay";
 };
 
-&tps43 {
-  status = "okay";
-};
+/* &tps43 { */
+/*   status = "okay"; */
+/* }; */
