@@ -165,6 +165,10 @@
 
 &i2c0 {
   status = "disabled";
+  compatible = "nordic,nrf-twim";
+  pinctrl-0 = <&i2c0_default>;
+  pinctrl-1 = <&i2c0_sleep>;
+  pinctrl-names = "default", "sleep";
   tps43: iqs5xx@74 {
     status = "disabled";
     compatible = "azoteq,iqs5xx";
