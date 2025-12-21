@@ -27,7 +27,7 @@
 };
 
 #define DEF 0
-#define COL 1
+#define QWE 1
 #define SYM 2
 #define NUM 3
 #define NAV 4
@@ -48,22 +48,22 @@
       compatible = "zmk,keymap";
 
       default_layer {
-        display-name = "QWERTY";
-        bindings = <
-&lt NAV TAB    &kp Q    &kp W    &kp E    &kp R    &kp T                      &mmv MOVE_UP                 &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
-&mt LCTRL ESC  &kp A    &kp S    &kp D    &kp F    &kp G       &mmv MOVE_LEFT &mkp LCLK    &mmv MOVE_RIGHT &kp H    &kp J    &kp K     &kp L    &kp SEMI  &lt SYM SQT
-&sft_cap       &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
-                                 &kp LGUI &kp SPACE &kp LALT                                               &lt NUM BSPC &kp ENTER &lt FN DEL
-        >;
-      };
-
-      colmak_layer {
-        display-name = "COL";
+        display-name = "DEF";
         bindings = <
 &lt NAV TAB    &kp Q    &kp W    &kp F    &kp P    &kp G                      &mmv MOVE_UP                 &kp J    &kp L    &kp U     &kp Y    &kp SEMI  &kp BSLH
 &mt LCTRL ESC  &kp A    &kp R    &kp S    &kp T    &kp D       &mmv MOVE_LEFT &mkp LCLK    &mmv MOVE_RIGHT &kp H    &kp N    &kp E     &kp I    &kp O     &lt SYM SQT
 &sft_cap       &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp K    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
-                                 &kp LGUI &kp SPACE &kp LALT                                               &lt NUM BSPC &kp ENTER &lt FN DEL
+                                 &kp LALT &kp LGUI &kp SPACE                                               &lt FN DEL &lt NUM BSPC &kp ENTER
+        >;
+      };
+
+      qwerty_layer {
+        display-name = "QWE";
+        bindings = <
+&lt NAV TAB    &kp Q    &kp W    &kp E    &kp R    &kp T                      &mmv MOVE_UP                 &kp Y    &kp U    &kp I     &kp O    &kp P     &kp BSLH
+&mt LCTRL ESC  &kp A    &kp S    &kp D    &kp F    &kp G       &mmv MOVE_LEFT &mkp LCLK    &mmv MOVE_RIGHT &kp H    &kp J    &kp K     &kp L    &kp SEMI  &lt SYM SQT
+&sft_cap       &kp Z    &kp X    &kp C    &kp V    &kp B  &none               &mmv MOVE_DOWN               &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH  &kp RSHIFT
+                                 &kp LALT &kp LGUI &kp SPACE                                               &lt FN DEL &lt NUM BSPC &kp ENTER
         >;
       };
 
@@ -93,14 +93,14 @@
 &kp TAB    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                        &msc SCRL_UP                 &kp HOME &kp PG_DN &kp PG_UP &kp END  &kp INS  &none
 &kp CAPS   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10        &msc SCRL_LEFT &mkp LCLK    &msc SCRL_RIGHT &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   &none
 &kp LSHIFT &kp F11  &kp F12  &kp F13  &kp F14  &kp PSCRN &none               &msc SCRL_DOWN               &none    &none     &none     &none    &none    &kp RSHIFT
-                             &mkp MB5 &mkp MB4 &mkp RCLK                                                  &trans   &trans    &trans
+                             &mkp RCLK &mkp MB5 &mkp MB4                                                  &trans   &trans    &trans
         >;
       };
 
       fn_layer {
         display-name = "FN";
         bindings = <
-&none   &rgb_ug RGB_TOG &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFF &rgb_ug RGB_EFR   &mmv MOVE_UP                         &to COL      &to DEF      &none        &none        &none        &none
+&none   &rgb_ug RGB_TOG &rgb_ug RGB_BRD  &rgb_ug RGB_BRI &rgb_ug RGB_EFF &rgb_ug RGB_EFR   &mmv MOVE_UP                         &to QWE      &to DEF      &none        &none        &none        &none
 &none   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP      &mmv MOVE_LEFT &mmv LCLK    &mmv MOVE_RIGHT         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR_ALL
 &none   &none      &none        &none        &none        &none        &none               &mmv MOVE_DOWN                       &out OUT_BLE &out OUT_USB &none        &none        &none        &none
                                 &none        &sys_reset   &bootloader                                                           &sys_reset   &bootloader  &none
