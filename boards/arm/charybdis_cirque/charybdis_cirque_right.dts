@@ -1,0 +1,21 @@
+#include "charybdis_cirque.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&spi0 {
+  status = "okay";
+};
+
+&mouse {
+  status = "okay";
+};
+
+&i2c1 {
+  status = "okay";
+};
+
+&tps43 {
+  status = "okay";
+};

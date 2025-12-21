@@ -1,0 +1,15 @@
+file_format: "1"
+id: charybdis_cirque
+name: UniqueDing KB
+url: https://github.com/uniqueding/uniqueding_kb
+type: board
+arch: arm
+features:
+  - keys
+  - mouse
+outputs:
+  - usb
+  - ble
+siblings:
+  - charybdis_cirque_left
+  - charybdis_cirque_right
