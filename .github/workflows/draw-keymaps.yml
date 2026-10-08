@@ -17,3 +17,5 @@ jobs:
       keymap_patterns: "config/charybdis.keymap"
       output_folder: "img"  
       config_path: "keymap_drawer.config.yaml"
+      draw_args: "charybdis:'--dts-layout config/boards/shields/charybdis/charybdis.dtsi --layout-name charybdis_layout'"
+      fail_on_error: true
