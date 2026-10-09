@@ -80,7 +80,7 @@ layers:
   - {t: FSLH, h: LAT}
   - Shift
   - Alt
-  - Cmd
+  - R-Ctrl
   - {t: Space, h: MSE}
   - Enter
   - {t: BSPC, h: NUM}
@@ -122,7 +122,7 @@ layers:
   - {t: FSLH, h: LAT}
   - Shift
   - Alt
-  - Cmd
+  - R-Ctrl
   - {t: Space, h: MSE}
   - Enter
   - {t: BSPC, h: NUM}

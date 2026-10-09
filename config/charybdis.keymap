@@ -97,7 +97,7 @@
 &lt NAV_MAC TAB &kp Q &kp W &kp F &kp P &kp G &kp J &kp L &kp U &kp Y &lt EMO_MAC SEMI &lt FN BSLH
 &caps_tap_ctrl LCTRL ESC &kp A &kp R &kp S &kp T &kp D &kp H &kp N &kp E &kp I &kp O &lt SYM SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp DOT &lt LAT FSLH &kp RSHIFT
-                                      &kp LALT &kp LGUI &lt MSE SPACE &kp ENTER &lt NUM BSPC
+                                      &kp LALT &kp RCTRL &lt MSE SPACE &kp ENTER &lt NUM BSPC
             >;
         };
 
@@ -107,7 +107,7 @@
 &lt NAV_LINUX TAB &kp Q &kp W &kp F &kp P &kp G &kp J &kp L &kp U &kp Y &lt EMO_LINUX SEMI &lt FN BSLH
 &caps_tap_ctrl LCTRL ESC &kp A &kp R &kp S &kp T &kp D &kp H &kp N &kp E &kp I &kp O &lt SYM SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp DOT &lt LAT FSLH &kp RSHIFT
-                                      &kp LALT &kp LGUI &lt MSE SPACE &kp ENTER &lt NUM BSPC
+                                      &kp LALT &kp RCTRL &lt MSE SPACE &kp ENTER &lt NUM BSPC
             >;
         };
 

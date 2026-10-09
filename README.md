@@ -18,7 +18,7 @@
 
 ## 拇指键
 
-物理上每半边从左至右：左侧 Alt（macOS Option）、GUI（Command/Super）、空格；右侧 Enter、最外侧拇指。KANATA 模式中这五键均为普通键，最外侧右拇指是实际 RAlt。MACOS/LINUX 模式中左侧空格按住进入 MSE，最外侧右拇指轻点 Backspace、按住进入 NUM，右内侧 Enter 为普通键。三种基底均完整显式绑定，不依赖图层继承。两个原生模式的 MSE/Space、NUM/Backspace tap-hold 为 200 ms；层 tap-hold、Caps Esc/Ctrl、NUM 的 tmux hold-tap 也维持 200 ms。ZMK 的边界重按/打断时序可能与 Kanata 不完全一致，可按实际手感调节。
+物理上每半边从左至右：左侧 Alt（macOS Option）、中间拇指键、空格；右侧 Enter、最外侧拇指。左侧 Alt 在三种基底中均输出 Alt。KANATA 模式的中间左拇指键输出 GUI（Command/Super）；MACOS/LINUX 模式中它输出 RightCtrl。KANATA 模式中这五键均为普通键，最外侧右拇指是实际 RAlt。MACOS/LINUX 模式中左侧空格按住进入 MSE（轻点 Space），最外侧右拇指轻点 Backspace、按住进入 NUM，右内侧 Enter 为普通键。三种基底均完整显式绑定，不依赖图层继承。两个原生模式的 MSE/Space、NUM/Backspace tap-hold 为 200 ms；层 tap-hold、Caps Esc/Ctrl、NUM 的 tmux hold-tap 也维持 200 ms。ZMK 的边界重按/打断时序可能与 Kanata 不完全一致，可按实际手感调节。
 
 ## 平台输出与主机要求
 

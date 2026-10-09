@@ -100,8 +100,8 @@ parse_config:
     
     LEFT_CONTROL: 'Ctrl'
     LCTRL: 'Ctrl'
-    RIGHT_CONTROL: 'Ctrl'
-    RCTRL: 'Ctrl'
+    RIGHT_CONTROL: 'R-Ctrl'
+    RCTRL: 'R-Ctrl'
     LEFT_SHIFT: 'Shift'
     LSHIFT: 'Shift'
     RIGHT_SHIFT: 'Shift'
