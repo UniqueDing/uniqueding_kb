@@ -37,53 +37,11 @@ layers:
   - .
   - FSLH
   - Shift
-  - Alt
-  - Cmd
   - Space
-  - Enter
+  - Cmd
   - Alt
-  MACOS:
-  - {t: Tab, h: NAV_MAC}
-  - Q
-  - W
-  - F
-  - P
-  - G
-  - J
-  - L
-  - U
-  - Y
-  - {t: ;, h: EMO_MAC}
-  - {t: BSLH, h: FN}
-  - {t: Esc, h: Ctrl}
-  - A
-  - R
-  - S
-  - T
-  - D
-  - H
-  - N
-  - E
-  - I
-  - O
-  - {t: '''', h: SYM}
-  - Shift
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - K
-  - M
-  - ','
-  - .
-  - {t: FSLH, h: LAT}
-  - Shift
   - Alt
-  - R-Ctrl
-  - {t: Space, h: MSE}
   - Enter
-  - {t: BSPC, h: NUM}
   LINUX:
   - {t: Tab, h: NAV_LINUX}
   - Q
@@ -121,11 +79,11 @@ layers:
   - .
   - {t: FSLH, h: LAT}
   - Shift
-  - Alt
-  - R-Ctrl
   - {t: Space, h: MSE}
-  - Enter
+  - Cmd
+  - Alt
   - {t: BSPC, h: NUM}
+  - Enter
   SYM:
   - Tab
   - Sft+1
@@ -208,49 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
-  NAV_MAC:
-  - {t: Tab, type: held}
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - Home
-  - PgDn
-  - PgUp
-  - End
-  - ''
-  - ''
-  - CAPS
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - ←
-  - ↓
-  - ↑
-  - →
-  - ''
-  - ''
-  - Shift
-  - F11
-  - F12
-  - F13
-  - F14
-  - DEL
-  - Gui+Sft+4
-  - ''
-  - Ctl+←
-  - Ctl+→
-  - ''
-  - Shift
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   NAV_LINUX:
   - {t: Tab, type: held}
@@ -302,8 +218,8 @@ layers:
   - ''
   - ''
   - KANATA
-  - macOS
-  - Linux
+  - ''
+  - LINUX
   - MSE
   - ''
   - {type: held}
@@ -331,9 +247,9 @@ layers:
   - ''
   - ''
   - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&studio_unlock'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   MSE:
@@ -373,9 +289,9 @@ layers:
   - ''
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SCR:
@@ -412,48 +328,6 @@ layers:
   - ''
   - Back
   - Forward
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  EMO_MAC:
-  - ''
-  - 😀
-  - 😂
-  - 😭
-  - 😴
-  - 🤔
-  - 😎
-  - 🌝
-  - 🌚
-  - 👀
-  - {t: 😴, type: held}
-  - ''
-  - ''
-  - ✅
-  - ❌
-  - ❓
-  - 🚨
-  - 🎉
-  - ✨
-  - 🚀
-  - 🔥
-  - 💡
-  - ''
-  - ''
-  - ''
-  - 👌
-  - 👏
-  - 🤝
-  - 👍
-  - 🙏
-  - 💖
-  - 🎈
-  - ''
   - ''
   - ''
   - ''
