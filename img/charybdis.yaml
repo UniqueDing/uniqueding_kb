@@ -37,7 +37,7 @@ layers:
   - .
   - FSLH
   - Shift
-  - Space
+  - {t: Space, h: MSE}
   - Cmd
   - Alt
   - Alt
