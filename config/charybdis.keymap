@@ -4,21 +4,16 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/unicode.dtsi>
-#include "kanata-macros.dtsi"
-
 #define KANATA 0
-#define MACOS 1
-#define LINUX 2
-#define SYM 3
-#define NUM 4
-#define NAV_MAC 5
-#define NAV_LINUX 6
-#define FN 7
-#define MSE 8
-#define SCR 9
-#define EMO_MAC 10
-#define EMO_LINUX 11
-#define LAT 12
+#define LINUX 1
+#define SYM 2
+#define NUM 3
+#define NAV_LINUX 4
+#define FN 5
+#define MSE 6
+#define SCR 7
+#define EMO_LINUX 8
+#define LAT 9
 
 &lt {
     flavor = "hold-preferred";
@@ -26,7 +21,7 @@
 };
 
 &uc {
-    default-mode = <UC_MODE_MACOS>;
+    default-mode = <UC_MODE_LINUX>;
     minimum-length = <4>;
 };
 
@@ -60,24 +55,6 @@
         };
     };
 
-    macros {
-        select_macos: select_macos {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings = <&macro_tap &uc UC_SET_MACOS &to MACOS>;
-        };
-
-        select_linux: select_linux {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings = <&macro_tap &uc UC_SET_LINUX &to LINUX>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -88,16 +65,6 @@
 &kp CAPS &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
                                       &kp SPACE &kp LGUI &kp LALT &kp RALT &kp ENTER
-            >;
-        };
-
-        macos_layer {
-            label = "MACOS";
-            bindings = <
-&lt NAV_MAC TAB &kp Q &kp W &kp F &kp P &kp G &kp J &kp L &kp U &kp Y &lt EMO_MAC SEMI &lt FN BSLH
-&caps_tap_ctrl LCTRL ESC &kp A &kp R &kp S &kp T &kp D &kp H &kp N &kp E &kp I &kp O &lt SYM SQT
-&kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp DOT &lt LAT FSLH &kp RSHIFT
-                                      &lt MSE SPACE &kp LGUI &kp LALT &lt NUM BSPC &kp ENTER
             >;
         };
 
@@ -131,16 +98,6 @@
             >;
         };
 
-        nav_mac_layer {
-            label = "NAV_MAC";
-            bindings = <
-&kp TAB &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp HOME &kp PG_DN &kp PG_UP &kp END &none &none
-&kp CAPS &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
-&kp LSHIFT &kp F11 &kp F12 &kp F13 &kp F14 &kp DEL &kp LG(LS(N4)) &none &kp LC(LEFT) &kp LC(RIGHT) &none &kp RSHIFT
-                                      &trans &trans &trans &trans &trans
-            >;
-        };
-
         nav_linux_layer {
             label = "NAV_LINUX";
             bindings = <
@@ -154,7 +111,7 @@
         fn_layer {
             label = "FN";
             bindings = <
-&none &none &none &none &none &none &to KANATA &select_macos &select_linux &mo MSE &none &none
+&none &none &none &none &none &none &to KANATA &none &to LINUX &mo MSE &none &none
 &none &none &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
 &none &none &none &none &none &none &out OUT_BLE &out OUT_USB &none &none &none &none
                                       &trans &trans &studio_unlock &trans &trans
@@ -177,16 +134,6 @@
 &none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
 &mt LCTRL ESC &kp A &none &none &none &none &none &mkp LCLK &ltm SCR MCLK &mkp RCLK &none &none
 &kp LSHIFT &kp Z &kp X &kp C &kp V &none &none &mkp MB4 &mkp MB5 &none &none &none
-                                      &trans &trans &trans &trans &trans
-            >;
-        };
-
-        emoji_mac_layer {
-            label = "EMO_MAC";
-            bindings = <
-&none &kanata_emoji_01f600 &kanata_emoji_01f602 &kanata_emoji_01f62d &kanata_emoji_01f634 &kanata_emoji_01f914 &kanata_emoji_01f60e &kanata_emoji_01f31d &kanata_emoji_01f31a &kanata_emoji_01f440 &kanata_emoji_01f634 &none
-&none &uc 0x2705 0 &uc 0x274C 0 &uc 0x2753 0 &kanata_emoji_01f6a8 &kanata_emoji_01f389 &uc 0x2728 0 &kanata_emoji_01f680 &kanata_emoji_01f525 &kanata_emoji_01f4a1 &none &none
-&none &kanata_emoji_01f44c &kanata_emoji_01f44f &kanata_emoji_01f91d &kanata_emoji_01f44d &kanata_emoji_01f64f &kanata_emoji_01f496 &kanata_emoji_01f388 &none &none &none &none
                                       &trans &trans &trans &trans &trans
             >;
         };
