@@ -6,7 +6,7 @@
 
 固件共 10 个有序图层：KANATA=0、LINUX=1、SYM=2、NUM=3、NAV_LINUX=4、FN=5、MSE=6、SCR=7、EMO_LINUX=8、LAT=9。开机默认 KANATA；固件不自动检测主机操作系统，不持久化模式选择。
 
-- **KANATA** 是普通 QWERTY，唯一的基底双功能键是右上反斜杠：轻点 `\`，按住进入 FN。Tab、Caps、Shift、引号、空格和实际 RAlt 都是普通键。
+- **KANATA** 使用 QWERTY，保留两个固件双功能键：右上反斜杠轻点输入 `\`、按住进入 FN；左手空格轻点输入 Space、按住进入 MSE。Tab、Caps、Shift、引号和实际 RAlt 都是普通键。
 - **LINUX** 使用标准 Colemak（不是 Colemak-DH），保留 Caps→Esc/Ctrl、Tab/NAV、分号/EMO、引号/SYM、斜杠/LAT、反斜杠/FN 双功能行为。
 - 在 FN 层，右手上排按物理左至右：第 1 键返回 KANATA，第 2 键留空（此前的 macOS 模式入口已移除），第 3 键切换到 LINUX，第 4 键 momentary 进入 MSE。MSE 中按住中键进入 SCR；退出时先释放中键，再释放 FN 中的 MSE 键。
 
@@ -16,10 +16,10 @@
 
 | 基底模式 | 左手：物理左至右 | 右手：物理左至右 |
 | --- | --- | --- |
-| KANATA | Space、LGUI（Command/Super）、LAlt（macOS Option） | 实际 RAlt、Enter |
+| KANATA | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | 实际 RAlt、Enter |
 | LINUX | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | Backspace（按住 NUM）、Enter |
 
-FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。相关 tap-hold 与 hold-tap 时限维持 200 ms；ZMK 的重按、打断边界可能和 Kanata 不完全一致，必要时可按手感调整。
+FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。两种模式都可长按左手空格进入 MSE，FN 中的 MSE 入口作为备用保留。相关 tap-hold 与 hold-tap 时限维持 200 ms；当前 hold-preferred 判定也可能在按住空格时另按其它键后提前进入 MSE，重按和打断时序需按实际手感验证。
 
 ## 平台输入
 
