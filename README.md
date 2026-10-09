@@ -2,6 +2,12 @@
 
 此分支基于 HeeTuic `36_charybdis_left_trackball`（`af73431dfe32f036ad51f24dd93eacb3df8369b5`），保留右侧 central、PMW3610 和 Studio 硬件设置。键位按用户提供的当前 Kanata 配置迁移。Unicode 依赖固定为 `urob/zmk-unicode` v0.3 对应提交 `3e8ca744e5c3b6f430b3713f3e45b806ce89be7b`；ZMK v0.3 与 PMW3610 driver 引用不变。
 
+## 键位图
+
+下图展示当前固件的全部 13 个图层：
+
+![Charybdis 全部图层键位图](img/charybdis.svg)
+
 ## 图层与切换
 
 固件共有 13 个有序图层，并非仅有三个图层：KANATA=0、MACOS=1、LINUX=2 为完整的基底；SYM=3、NUM=4、NAV_MAC=5、NAV_LINUX=6、FN=7、MSE=8、SCR=9、EMO_MAC=10、EMO_LINUX=11、LAT=12 为功能/平台子层。开机默认 KANATA；不会根据主机操作系统自动选择模式，也不会将选择持久化。

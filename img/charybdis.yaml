@@ -1,0 +1,548 @@
+layout: {zmk_keyboard: charybdis}
+layers:
+  KANATA:
+  - Tab
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: BSLH, h: FN}
+  - CAPS
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - FSLH
+  - Shift
+  - Alt
+  - Cmd
+  - Space
+  - Enter
+  - Alt
+  MACOS:
+  - {t: Tab, h: NAV_MAC}
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - {t: ;, h: EMO_MAC}
+  - {t: BSLH, h: FN}
+  - {t: Esc, h: Ctrl}
+  - A
+  - R
+  - S
+  - T
+  - D
+  - H
+  - N
+  - E
+  - I
+  - O
+  - {t: '''', h: SYM}
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - K
+  - M
+  - ','
+  - .
+  - {t: FSLH, h: LAT}
+  - Shift
+  - Alt
+  - Cmd
+  - {t: Space, h: MSE}
+  - Enter
+  - {t: BSPC, h: NUM}
+  LINUX:
+  - {t: Tab, h: NAV_LINUX}
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - {t: ;, h: EMO_LINUX}
+  - {t: BSLH, h: FN}
+  - {t: Esc, h: Ctrl}
+  - A
+  - R
+  - S
+  - T
+  - D
+  - H
+  - N
+  - E
+  - I
+  - O
+  - {t: '''', h: SYM}
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - K
+  - M
+  - ','
+  - .
+  - {t: FSLH, h: LAT}
+  - Shift
+  - Alt
+  - Cmd
+  - {t: Space, h: MSE}
+  - Enter
+  - {t: BSPC, h: NUM}
+  SYM:
+  - Tab
+  - Sft+1
+  - Sft+2
+  - Sft+3
+  - Sft+4
+  - Sft+5
+  - ¡
+  - ¿
+  - «
+  - »
+  - €
+  - °
+  - BSPC
+  - '['
+  - ']'
+  - Sft+[
+  - Sft+]
+  - Sft+BSLH
+  - ''
+  - Sft+9
+  - Sft+0
+  - —
+  - …
+  - {type: held}
+  - Shift
+  - BSLH
+  - Sft+7
+  - '`'
+  - Sft+`
+  - Sft+6
+  - ''
+  - ·
+  - ''
+  - ''
+  - ''
+  - Shift
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NUM:
+  - Tab
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BSPC
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - ''
+  - '='
+  - '-'
+  - +
+  - '*'
+  - FSLH
+  - Shift
+  - ''
+  - X
+  - _
+  - .
+  - ''
+  - ''
+  - {t: Ctrl+G, h: R-Ctrl}
+  - ''
+  - ''
+  - ''
+  - Shift
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  NAV_MAC:
+  - {t: Tab, type: held}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - Home
+  - PgDn
+  - PgUp
+  - End
+  - ''
+  - ''
+  - CAPS
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - ←
+  - ↓
+  - ↑
+  - →
+  - ''
+  - ''
+  - Shift
+  - F11
+  - F12
+  - F13
+  - F14
+  - DEL
+  - Gui+Sft+4
+  - ''
+  - Ctl+←
+  - Ctl+→
+  - ''
+  - Shift
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NAV_LINUX:
+  - {t: Tab, type: held}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - Home
+  - PgDn
+  - PgUp
+  - End
+  - ''
+  - ''
+  - CAPS
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - ←
+  - ↓
+  - ↑
+  - →
+  - ''
+  - ''
+  - Shift
+  - F11
+  - F12
+  - F13
+  - F14
+  - DEL
+  - PSCRN
+  - ''
+  - Ctl+←
+  - Ctl+→
+  - ''
+  - Shift
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  FN:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - KANATA
+  - macOS
+  - Linux
+  - MSE
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - OUT BLE
+  - OUT USB
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&studio_unlock'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  MSE:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Wheel ←
+  - Wheel ↓
+  - Wheel ↑
+  - Wheel →
+  - ''
+  - ''
+  - {t: ESC, h: Ctrl}
+  - A
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - L-click
+  - {t: M-click, h: SCR}
+  - R-click
+  - ''
+  - ''
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - ''
+  - ''
+  - Back
+  - Forward
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  SCR:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Wheel ←
+  - Wheel ↓
+  - Wheel ↑
+  - Wheel →
+  - ''
+  - ''
+  - {t: ESC, h: Ctrl}
+  - A
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - L-click
+  - {t: M-click, h: SCR}
+  - R-click
+  - ''
+  - ''
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - ''
+  - ''
+  - Back
+  - Forward
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  EMO_MAC:
+  - ''
+  - 😀
+  - 😂
+  - 😭
+  - 😴
+  - 🤔
+  - 😎
+  - 🌝
+  - 🌚
+  - 👀
+  - {t: 😴, type: held}
+  - ''
+  - ''
+  - ✅
+  - ❌
+  - ❓
+  - 🚨
+  - 🎉
+  - ✨
+  - 🚀
+  - 🔥
+  - 💡
+  - ''
+  - ''
+  - ''
+  - 👌
+  - 👏
+  - 🤝
+  - 👍
+  - 🙏
+  - 💖
+  - 🎈
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  EMO_LINUX:
+  - ''
+  - 😀
+  - 😂
+  - 😭
+  - 😴
+  - 🤔
+  - 😎
+  - 🌝
+  - 🌚
+  - 👀
+  - {t: 😴, type: held}
+  - ''
+  - ''
+  - ✅
+  - ❌
+  - ❓
+  - 🚨
+  - 🎉
+  - ✨
+  - 🚀
+  - 🔥
+  - 💡
+  - ''
+  - ''
+  - ''
+  - 👌
+  - 👏
+  - 🤝
+  - 👍
+  - 🙏
+  - 💖
+  - 🎈
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  LAT:
+  - ''
+  - á / Á
+  - é / É
+  - è / È
+  - à / À
+  - ï / Ï
+  - æ / Æ
+  - œ / Œ
+  - â / Â
+  - ë / Ë
+  - ''
+  - ''
+  - ''
+  - ñ / Ñ
+  - í / Í
+  - ê / Ê
+  - ö / Ö
+  - ü / Ü
+  - ô / Ô
+  - î / Î
+  - ù / Ù
+  - û / Û
+  - ÿ / Ÿ
+  - ''
+  - Shift
+  - ó / Ó
+  - ú / Ú
+  - ß / ẞ
+  - ä / Ä
+  - ì / Ì
+  - ç / Ç
+  - ò / Ò
+  - ''
+  - ''
+  - {type: held}
+  - Shift
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
