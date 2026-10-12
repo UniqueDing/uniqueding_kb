@@ -1,6 +1,6 @@
 # Charybdis：Kanata 与 Linux 原生 Colemak
 
-此分支基于 HeeTuic `36_charybdis_left_trackball`（`af73431dfe32f036ad51f24dd93eacb3df8369b5`），保留右侧 central、PMW3610 与 Studio 硬件设置。键位依据用户当前 Kanata 配置迁移。Unicode 依赖固定为 `urob/zmk-unicode` v0.3 对应提交 `3e8ca744e5c3b6f430b3713f3e45b806ce89be7b`；ZMK v0.3 和 PMW3610 driver 引用不变。
+此分支基于 HeeTuic `36_charybdis_left_trackball`（`af73431dfe32f036ad51f24dd93eacb3df8369b5`），保留右侧 central、PMW3610 与 Studio 硬件设置。键位依据用户当前 Kanata 配置迁移。Unicode 依赖固定为 `urob/zmk-unicode` v0.3 对应提交 `3e8ca744e5c3b6f430b3713f3e45b806ce89be7b`；ZMK 使用 v0.3，PMW3610 driver 固定在 `1d9c2c68ca76012e1b1e5f6ef02fa5eadc4ca399`。
 
 ## 图层与两种基底模式
 
@@ -23,9 +23,11 @@ FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能
 
 ## 轨迹球三档速度
 
-右手 PMW3610 固定为 800 CPI、除数 1；左手 MSE 层主行从左数第 3 键（KANATA 的 S / LINUX 的 R 物理位置，原先留空）依次切换中档→慢档→快档→中档。DPI_SLOW、DPI_FAST 仅用于选择速度，其他键透明；松开 MSE 后仍保留选中的档位，再按住空格或从 FN 进入 MSE 后可继续切换。SCR 排在两档之上，滚动保持原有行为。
+右手 PMW3610 固定为 800 CPI、除数 1；左手 MSE 层主行从左数第 3 键（KANATA 的 S / LINUX 的 R 物理位置，原先留空）依次切换中档→慢档→快档→中档。DPI_SLOW、DPI_FAST 仅用于选择速度，其他键透明；松开 MSE 后仍保留选中的档位，再按住空格进入 MSE 后可继续切换。SCR 排在两档之上，滚动保持原有行为。
 
 ZMK 输入处理器分别将传感器 X/Y 位移缩放为中档 1/2、慢档 1/4、快档 1 倍，名义输出约为 400/200/800；缩放器会跨报告保存余数，区别于旧驱动直接把每次位移除以 4 且丢弃余数。这里只切换固件报告的指针速度，**不**动态修改传感器 CPI；操作系统的指针加速仍会影响实际手感。NAV_LINUX 原有的精细模式在未启用慢/快档时保留：传感器 200 CPI、除数 1，再经过中档缩放，名义输出约为 100。若慢/快档仍激活，其图层编号高于 NAV_LINUX，驱动会继续采用普通传感器 CPI；回到中档可恢复 NAV_LINUX 精细模式。
+
+右半边改用 PMW3610 的 250 Hz 轮询选项，不再使用驱动会先暂存一次位移、等待下次中断才报告的 `125_SW` 路径；同时反转轨迹球在 SCR 层的上下滚动，不改变键盘滚动键的方向。是否改善静止后的首次微移，以及对功耗和手感的影响，需刷写右半边后实测。
 
 ## 平台输入
 
@@ -37,4 +39,4 @@ ZMK 输入处理器分别将传感器 X/Y 位移缩放为中档 1/2、慢档 1/4
 
 实现期间进行了本地静态键位、hold-tap、Unicode、层切换和指针层配置核对；静态检查不等于固件构建或运行验证。当前没有可用的 west/Zephyr SDK，固件尚未构建，键盘和主机运行时行为也未实测。
 
-刷写后建议验证两种模式间的转换、切换后释放 FN、空格→MSE→SCR 的进入/释放顺序、三档循环及松开空格后的档位保留、慢速微移、各档滚动、模式切换后再输出 Unicode、PrintScreen、LAT 大小写、emoji 和 Linux 输入法配置。当前没有固件体积或构建成功的证据。
+刷写后建议验证两种模式间的转换、切换后释放 FN、空格→MSE→SCR 的进入/释放顺序、三档循环及松开空格后的档位保留、静止后单次微移、连续慢速微移、各档滚动与电池续航，以及模式切换后再输出 Unicode、PrintScreen、LAT 大小写、emoji 和 Linux 输入法配置。当前没有固件体积或构建成功的证据。

@@ -13,7 +13,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: DoctorWangWang
-      revision: main
+      revision: 1d9c2c68ca76012e1b1e5f6ef02fa5eadc4ca399
     - name: zmk-unicode
       remote: urob
       revision: 3e8ca744e5c3b6f430b3713f3e45b806ce89be7b

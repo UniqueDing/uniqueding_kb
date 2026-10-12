@@ -132,6 +132,8 @@ parse_config:
     "&caps_tap_ctrl LCTRL ESC": {t: "Esc", h: "Ctrl"}
     "&to KANATA": "KANATA"
     "&to LINUX": "LINUX"
+    "&bootloader": "Bootloader"
+    "&dpi_fast_to_normal": "DPI: Normal"
     "&msc SCRL_LEFT": "Wheel ←"
     "&msc SCRL_DOWN": "Wheel ↓"
     "&msc SCRL_UP": "Wheel ↑"
