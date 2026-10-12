@@ -5,6 +5,7 @@
  */
  
 #include "charybdis.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -56,7 +57,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <7>;
+        scroll-layers = <9>;
         snipe-layers = <4>;
     };
 };
@@ -65,5 +66,17 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        // The scaler retains fractional motion between reports; the driver does not.
+        input-processors = <&zip_xy_scaler 1 2>;
+
+        fast {
+            layers = <8>;
+            input-processors = <&zip_xy_scaler 1 1>;
+        };
+
+        slow {
+            layers = <7>;
+            input-processors = <&zip_xy_scaler 1 4>;
+        };
     };
 };

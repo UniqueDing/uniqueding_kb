@@ -4,11 +4,11 @@
 
 ## 图层与两种基底模式
 
-固件共 10 个有序图层：KANATA=0、LINUX=1、SYM=2、NUM=3、NAV_LINUX=4、FN=5、MSE=6、SCR=7、EMO_LINUX=8、LAT=9。开机默认 KANATA；固件不自动检测主机操作系统，不持久化模式选择。
+固件共 12 个有序图层：KANATA=0、LINUX=1、SYM=2、NUM=3、NAV_LINUX=4、FN=5、MSE=6、DPI_SLOW=7、DPI_FAST=8、SCR=9、EMO_LINUX=10、LAT=11。开机默认 KANATA；固件不自动检测主机操作系统，不持久化模式选择。
 
 - **KANATA** 使用 QWERTY，保留两个固件双功能键：右上反斜杠轻点输入 `\`、按住进入 FN；左手空格轻点输入 Space、按住进入 MSE。Tab、Caps、Shift、引号和实际 RAlt 都是普通键。
 - **LINUX** 使用标准 Colemak（不是 Colemak-DH），保留 Caps→Esc/Ctrl、Tab/NAV、分号/EMO、引号/SYM、斜杠/LAT、反斜杠/FN 双功能行为。
-- 在 FN 层，右手上排按物理左至右：第 1 键返回 KANATA，第 2 键留空（此前的 macOS 模式入口已移除），第 3 键切换到 LINUX，第 4 键 momentary 进入 MSE。MSE 中按住中键进入 SCR；退出时先释放中键，再释放 FN 中的 MSE 键。
+- 在 FN 层，右手上排按物理左至右：第 1 键返回 KANATA，第 2 键切换到 LINUX，第 3、4 键留空，第 5 键进入右半边 bootloader（KANATA 的 P / LINUX 的分号位置）。MSE 通过左手空格长按进入；MSE 中按住中键进入 SCR，退出时先释放中键，再释放空格。
 
 ## 拇指键
 
@@ -19,7 +19,13 @@
 | KANATA | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | 实际 RAlt、Enter |
 | LINUX | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | Backspace（按住 NUM）、Enter |
 
-FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。两种模式都可长按左手空格进入 MSE，FN 中的 MSE 入口作为备用保留。两种模式下的空格/MSE 与反斜杠/FN 使用独立的 tap-preferred 行为，判定时间为 300 ms；按住期间另按其它键不会提前判为长按。其余 `&lt` 键仍使用原有的 hold-preferred、200 ms。空格按住超过 300 ms 会进入 MSE，不会输出空格；连续打字、进入鼠标层和 FN 的手感仍需实机验证。
+FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。两种模式都可长按左手空格进入 MSE。两种模式下的空格/MSE 与反斜杠/FN 使用独立的 tap-preferred 行为，判定时间为 300 ms；按住期间另按其它键不会提前判为长按。其余 `&lt` 键仍使用原有的 hold-preferred、200 ms。空格按住超过 300 ms 会进入 MSE，不会输出空格；连续打字、进入鼠标层和 FN 的手感仍需实机验证。
+
+## 轨迹球三档速度
+
+右手 PMW3610 固定为 800 CPI、除数 1；左手 MSE 层主行从左数第 3 键（KANATA 的 S / LINUX 的 R 物理位置，原先留空）依次切换中档→慢档→快档→中档。DPI_SLOW、DPI_FAST 仅用于选择速度，其他键透明；松开 MSE 后仍保留选中的档位，再按住空格或从 FN 进入 MSE 后可继续切换。SCR 排在两档之上，滚动保持原有行为。
+
+ZMK 输入处理器分别将传感器 X/Y 位移缩放为中档 1/2、慢档 1/4、快档 1 倍，名义输出约为 400/200/800；缩放器会跨报告保存余数，区别于旧驱动直接把每次位移除以 4 且丢弃余数。这里只切换固件报告的指针速度，**不**动态修改传感器 CPI；操作系统的指针加速仍会影响实际手感。NAV_LINUX 原有的精细模式在未启用慢/快档时保留：传感器 200 CPI、除数 1，再经过中档缩放，名义输出约为 100。若慢/快档仍激活，其图层编号高于 NAV_LINUX，驱动会继续采用普通传感器 CPI；回到中档可恢复 NAV_LINUX 精细模式。
 
 ## 平台输入
 
@@ -31,4 +37,4 @@ FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能
 
 实现期间进行了本地静态键位、hold-tap、Unicode、层切换和指针层配置核对；静态检查不等于固件构建或运行验证。当前没有可用的 west/Zephyr SDK，固件尚未构建，键盘和主机运行时行为也未实测。
 
-刷写后建议验证两种模式间的转换、切换后释放 FN、FN→MSE→SCR 的进入/释放顺序、模式切换后再输出 Unicode、PrintScreen、LAT 大小写、emoji 和 Linux 输入法配置。当前没有固件体积或构建成功的证据。
+刷写后建议验证两种模式间的转换、切换后释放 FN、空格→MSE→SCR 的进入/释放顺序、三档循环及松开空格后的档位保留、慢速微移、各档滚动、模式切换后再输出 Unicode、PrintScreen、LAT 大小写、emoji 和 Linux 输入法配置。当前没有固件体积或构建成功的证据。
