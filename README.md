@@ -19,7 +19,7 @@
 | KANATA | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | 实际 RAlt、Enter |
 | LINUX | Space（按住 MSE）、LGUI（Command/Super）、LAlt（macOS Option） | Backspace（按住 NUM）、Enter |
 
-FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。两种模式都可长按左手空格进入 MSE，FN 中的 MSE 入口作为备用保留。相关 tap-hold 与 hold-tap 时限维持 200 ms；当前 hold-preferred 判定也可能在按住空格时另按其它键后提前进入 MSE，重按和打断时序需按实际手感验证。
+FN 层的 Studio 解锁键随 LAlt 移至左手第三个拇指位；其余功能层拇指透明。KANATA 的右手左侧拇指输出真实 RAlt；LINUX 模式的对应位置轻点 Backspace、按住 NUM。右手右侧拇指在两种模式下均为 Enter。两种模式都可长按左手空格进入 MSE，FN 中的 MSE 入口作为备用保留。两种模式下的空格/MSE 与反斜杠/FN 使用独立的 tap-preferred 行为，判定时间为 300 ms；按住期间另按其它键不会提前判为长按。其余 `&lt` 键仍使用原有的 hold-preferred、200 ms。空格按住超过 300 ms 会进入 MSE，不会输出空格；连续打字、进入鼠标层和 FN 的手感仍需实机验证。
 
 ## 平台输入
 
