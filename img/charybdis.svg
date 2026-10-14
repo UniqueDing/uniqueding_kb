@@ -163,9 +163,7 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 <g transform="translate(224, 224)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Space</text>
-<a href="#MSE">
-<text x="0" y="24" class="key hold layer-activator">MSE</text>
-</a></g>
+</g>
 <g transform="translate(280, 224)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Cmd</text>
@@ -345,9 +343,7 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 <g transform="translate(224, 224)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Space</text>
-<a href="#MSE">
-<text x="0" y="24" class="key hold layer-activator">MSE</text>
-</a></g>
+</g>
 <g transform="translate(280, 224)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">R-Ctrl</text>
@@ -1148,8 +1144,9 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 <g transform="translate(742, 182)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 </g>
-<g transform="translate(224, 224)" class="key held keypos-36">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
+<g transform="translate(224, 224)" class="key trans keypos-36">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(280, 224)" class="key trans keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>

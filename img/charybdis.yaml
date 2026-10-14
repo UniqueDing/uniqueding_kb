@@ -37,7 +37,7 @@ layers:
   - .
   - FSLH
   - Shift
-  - {t: Space, h: MSE}
+  - Space
   - Cmd
   - Alt
   - Alt
@@ -79,7 +79,7 @@ layers:
   - .
   - {t: FSLH, h: LAT}
   - Shift
-  - {t: Space, h: MSE}
+  - Space
   - R-Ctrl
   - Alt
   - {t: BSPC, h: NUM}
@@ -289,7 +289,7 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
