@@ -57,7 +57,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <9>;
+        scroll-layers = <11>;
         snipe-layers = <4>;
     };
 };
@@ -67,10 +67,10 @@
 &zip_temp_layer {
     require-prior-idle-ms = <300>;
     // Logical key positions (3x12 rows, then 5 thumbs): MSE/SCR wheel
-    // keys 6-9, DPI cycle at 14, mouse buttons at 19-21 and 31-32.
+    // keys 6-9 and mouse buttons at 19-21 and 31-32.
     // Presses here do not deactivate the temp layer; they do not renew it.
     // Only mouse input events renew the 700 ms timeout.
-    excluded-positions = <6 7 8 9 14 19 20 21 31 32>;
+    excluded-positions = <6 7 8 9 19 20 21 31 32>;
 };
 
 / {

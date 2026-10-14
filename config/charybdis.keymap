@@ -13,9 +13,11 @@
 #define MSE 6
 #define DPI_SLOW 7
 #define DPI_FAST 8
-#define SCR 9
-#define EMO_LINUX 10
-#define LAT 11
+#define FN_DPI_SLOW 9
+#define FN_DPI_FAST 10
+#define SCR 11
+#define EMO_LINUX 12
+#define LAT 13
 
 &lt {
     flavor = "hold-preferred";
@@ -29,10 +31,12 @@
 
 / {
     behaviors {
-        dpi_fast_to_normal: dpi_fast_to_normal {
+        dpi_slow_to_fast: dpi_slow_to_fast {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog DPI_FAST>, <&tog DPI_SLOW>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings = <&tog DPI_SLOW>, <&tog DPI_FAST>;
         };
 
         typing_layer_tap: typing_layer_tap {
@@ -69,6 +73,20 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&mkp>;
             display-name = "Layer-Tap";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        fn_dpi_slow_layer {
+            if-layers = <FN DPI_SLOW>;
+            then-layer = <FN_DPI_SLOW>;
+        };
+
+        fn_dpi_fast_layer {
+            if-layers = <FN DPI_FAST>;
+            then-layer = <FN_DPI_FAST>;
         };
     };
 
@@ -130,7 +148,7 @@
             bindings = <
 &none &none &none &none &none &none &to KANATA &to LINUX &none &none &bootloader &none
 &none &none &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-&none &none &none &none &none &none &out OUT_BLE &out OUT_USB &none &none &none &none
+&none &none &none &none &none &none &out OUT_BLE &out OUT_USB &none &tog DPI_SLOW &none &none
                                       &trans &trans &studio_unlock &trans &trans
             >;
         };
@@ -138,9 +156,9 @@
         mouse_layer {
             label = "MSE";
             bindings = <
-&none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
-&mt LCTRL ESC &kp A &tog DPI_SLOW &none &none &none &none &mkp LCLK &ltm SCR MCLK &mkp RCLK &none &none
-&kp LSHIFT &kp Z &kp X &kp C &kp V &none &none &mkp MB4 &mkp MB5 &none &none &none
+&trans &trans &trans &trans &trans &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &mkp LCLK &ltm SCR MCLK &mkp RCLK &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &mkp MB4 &mkp MB5 &trans &trans &trans
                                       &trans &trans &trans &trans &trans
             >;
         };
@@ -149,9 +167,9 @@
             label = "DPI_SLOW";
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &tog DPI_FAST &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                                      &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                                       &trans &trans &trans &trans &trans
             >;
         };
 
@@ -159,8 +177,28 @@
             label = "DPI_FAST";
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &dpi_fast_to_normal &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                                       &trans &trans &trans &trans &trans
+            >;
+        };
+
+        fn_dpi_slow_layer {
+            label = "FN_DPI_SLOW";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_slow_to_fast &trans &trans
+                                      &trans &trans &trans &trans &trans
+            >;
+        };
+
+        fn_dpi_fast_layer {
+            label = "FN_DPI_FAST";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &tog DPI_FAST &trans &trans
                                       &trans &trans &trans &trans &trans
             >;
         };
@@ -168,9 +206,9 @@
         scroll_layer {
             label = "SCR";
             bindings = <
-&none &none &none &none &none &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
-&mt LCTRL ESC &kp A &none &none &none &none &none &mkp LCLK &ltm SCR MCLK &mkp RCLK &none &none
-&kp LSHIFT &kp Z &kp X &kp C &kp V &none &none &mkp MB4 &mkp MB5 &none &none &none
+&trans &trans &trans &trans &trans &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &mkp LCLK &ltm SCR MCLK &mkp RCLK &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &mkp MB4 &mkp MB5 &trans &trans &trans
                                       &trans &trans &trans &trans &trans
             >;
         };
