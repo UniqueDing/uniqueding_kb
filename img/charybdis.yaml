@@ -221,7 +221,7 @@ layers:
   - LINUX
   - ''
   - ''
-  - '&bootloader'
+  - Bootloader
   - {type: held}
   - ''
   - ''
@@ -351,7 +351,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&dpi_fast_to_normal'
+  - 'DPI: Normal'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
