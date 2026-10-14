@@ -57,7 +57,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <11>;
+        scroll-layers = <15>;
         snipe-layers = <4>;
     };
 };
@@ -78,16 +78,26 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         // The scaler retains fractional motion between reports; the driver does not.
-        input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 6 700>;
+        input-processors = <&zip_xy_scaler 3 4>, <&zip_temp_layer 6 700>;
 
-        fast {
+        dpi_200 {
+            layers = <7>;
+            input-processors = <&zip_xy_scaler 1 4>, <&zip_temp_layer 6 700>;
+        };
+
+        dpi_400 {
             layers = <8>;
+            input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 6 700>;
+        };
+
+        dpi_800 {
+            layers = <9>;
             input-processors = <&zip_xy_scaler 1 1>, <&zip_temp_layer 6 700>;
         };
 
-        slow {
-            layers = <7>;
-            input-processors = <&zip_xy_scaler 1 4>, <&zip_temp_layer 6 700>;
+        dpi_1000 {
+            layers = <10>;
+            input-processors = <&zip_xy_scaler 5 4>, <&zip_temp_layer 6 700>;
         };
     };
 };
