@@ -62,21 +62,32 @@
     };
 };
 
+// Trackball input activates MSE after 300 ms without key activity and
+// returns to the prior layer 700 ms after the last mouse event.
+&zip_temp_layer {
+    require-prior-idle-ms = <300>;
+    // Logical key positions (3x12 rows, then 5 thumbs): MSE/SCR wheel
+    // keys 6-9, DPI cycle at 14, mouse buttons at 19-21 and 31-32.
+    // Presses here do not deactivate the temp layer; they do not renew it.
+    // Only mouse input events renew the 700 ms timeout.
+    excluded-positions = <6 7 8 9 14 19 20 21 31 32>;
+};
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         // The scaler retains fractional motion between reports; the driver does not.
-        input-processors = <&zip_xy_scaler 1 2>;
+        input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 6 700>;
 
         fast {
             layers = <8>;
-            input-processors = <&zip_xy_scaler 1 1>;
+            input-processors = <&zip_xy_scaler 1 1>, <&zip_temp_layer 6 700>;
         };
 
         slow {
             layers = <7>;
-            input-processors = <&zip_xy_scaler 1 4>;
+            input-processors = <&zip_xy_scaler 1 4>, <&zip_temp_layer 6 700>;
         };
     };
 };

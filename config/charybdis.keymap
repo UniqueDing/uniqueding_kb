@@ -81,7 +81,7 @@
 &kp TAB &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &typing_layer_tap FN BSLH
 &kp CAPS &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &kp SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-                                      &typing_layer_tap MSE SPACE &kp LGUI &kp LALT &kp RALT &kp ENTER
+                                      &kp SPACE &kp LGUI &kp LALT &kp RALT &kp ENTER
             >;
         };
 
@@ -91,7 +91,7 @@
 &lt NAV_LINUX TAB &kp Q &kp W &kp F &kp P &kp G &kp J &kp L &kp U &kp Y &lt EMO_LINUX SEMI &typing_layer_tap FN BSLH
 &caps_tap_ctrl LCTRL ESC &kp A &kp R &kp S &kp T &kp D &kp H &kp N &kp E &kp I &kp O &lt SYM SQT
 &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B &kp K &kp M &kp COMMA &kp DOT &lt LAT FSLH &kp RSHIFT
-                                      &typing_layer_tap MSE SPACE &kp RCTRL &kp LALT &lt NUM BSPC &kp ENTER
+                                      &kp SPACE &kp RCTRL &kp LALT &lt NUM BSPC &kp ENTER
             >;
         };
 
