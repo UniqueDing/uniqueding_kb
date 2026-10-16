@@ -14,11 +14,11 @@
 #define DPI_200 7
 #define DPI_400 8
 #define DPI_800 9
-#define DPI_1000 10
+#define DPI_600 10
 #define FN_DPI_200 11
 #define FN_DPI_400 12
 #define FN_DPI_800 13
-#define FN_DPI_1000 14
+#define FN_DPI_600 14
 #define SCR 15
 #define EMO_LINUX 16
 #define LAT 17
@@ -35,28 +35,28 @@
 
 / {
     behaviors {
-        dpi_800_to_1000: dpi_800_to_1000 {
+        dpi_800_to_200: dpi_800_to_200 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings = <&tog DPI_800>, <&tog DPI_1000>;
+            bindings = <&tog DPI_800>, <&tog DPI_200>;
         };
 
-        dpi_1000_to_200: dpi_1000_to_200 {
+        dpi_400_to_600: dpi_400_to_600 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings = <&tog DPI_1000>, <&tog DPI_200>;
+            bindings = <&tog DPI_400>, <&tog DPI_600>;
         };
 
-        dpi_200_to_400: dpi_200_to_400 {
+        dpi_600_to_800: dpi_600_to_800 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             tap-ms = <0>;
             wait-ms = <0>;
-            bindings = <&tog DPI_200>, <&tog DPI_400>;
+            bindings = <&tog DPI_600>, <&tog DPI_800>;
         };
 
         typing_layer_tap: typing_layer_tap {
@@ -114,9 +114,9 @@
             then-layer = <FN_DPI_800>;
         };
 
-        fn_dpi_1000_layer {
-            if-layers = <FN DPI_1000>;
-            then-layer = <FN_DPI_1000>;
+        fn_dpi_600_layer {
+            if-layers = <FN DPI_600>;
+            then-layer = <FN_DPI_600>;
         };
     };
 
@@ -178,7 +178,7 @@
             bindings = <
 &none &none &none &none &none &none &to KANATA &to LINUX &none &none &bootloader &none
 &none &none &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-&none &none &none &none &none &none &out OUT_BLE &out OUT_USB &none &tog DPI_800 &none &none
+&none &none &none &none &none &none &out OUT_BLE &out OUT_USB &none &tog DPI_400 &none &none
                                       &trans &trans &studio_unlock &trans &trans
             >;
         };
@@ -223,8 +223,8 @@
             >;
         };
 
-        dpi_1000_layer {
-            label = "DPI_1000";
+        dpi_600_layer {
+            label = "DPI_600";
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
@@ -238,7 +238,7 @@
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_200_to_400 &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &tog DPI_200 &trans &trans
                                        &trans &trans &trans &trans &trans
             >;
         };
@@ -248,7 +248,7 @@
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &tog DPI_400 &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_400_to_600 &trans &trans
                                        &trans &trans &trans &trans &trans
             >;
         };
@@ -258,17 +258,17 @@
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_800_to_1000 &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_800_to_200 &trans &trans
                                        &trans &trans &trans &trans &trans
             >;
         };
 
-        fn_dpi_1000_layer {
-            label = "FN_DPI_1000";
+        fn_dpi_600_layer {
+            label = "FN_DPI_600";
             bindings = <
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_1000_to_200 &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &dpi_600_to_800 &trans &trans
                                        &trans &trans &trans &trans &trans
             >;
         };

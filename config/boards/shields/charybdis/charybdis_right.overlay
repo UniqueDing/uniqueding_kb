@@ -78,7 +78,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         // The scaler retains fractional motion between reports; the driver does not.
-        input-processors = <&zip_xy_scaler 3 4>, <&zip_temp_layer 6 700>;
+        input-processors = <&zip_xy_scaler 3 8>, <&zip_temp_layer 6 700>;
 
         dpi_200 {
             layers = <7>;
@@ -95,9 +95,9 @@
             input-processors = <&zip_xy_scaler 1 1>, <&zip_temp_layer 6 700>;
         };
 
-        dpi_1000 {
+        dpi_600 {
             layers = <10>;
-            input-processors = <&zip_xy_scaler 5 4>, <&zip_temp_layer 6 700>;
+            input-processors = <&zip_xy_scaler 3 4>, <&zip_temp_layer 6 700>;
         };
     };
 };
