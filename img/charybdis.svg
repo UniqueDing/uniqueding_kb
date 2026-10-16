@@ -974,8 +974,8 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 <g transform="translate(630, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<a href="#DPI_800">
-<text x="0" y="0" class="key tap layer-activator">DPI_800</text>
+<a href="#DPI_400">
+<text x="0" y="0" class="key tap layer-activator">DPI_400</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(686, 182)" class="key keypos-34">
@@ -1692,8 +1692,8 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 3080)" class="layer-DPI_1000">
-<text x="0" y="28" class="label" id="DPI_1000">DPI_1000:</text>
+<g transform="translate(30, 3080)" class="layer-DPI_600">
+<text x="0" y="28" class="label" id="DPI_600">DPI_600:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 70)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1997,7 +1997,9 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 <g transform="translate(630, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;dpi_200_t…</tspan></text>
+<a href="#DPI_200">
+<text x="0" y="0" class="key tap layer-activator">DPI_200</text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(686, 182)" class="key trans keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -2165,9 +2167,7 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 <g transform="translate(630, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<a href="#DPI_400">
-<text x="0" y="0" class="key tap layer-activator">DPI_400</text>
-</a><text x="0" y="24" class="key hold">toggle</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;dpi_400_t…</tspan></text>
 </g>
 <g transform="translate(686, 182)" class="key trans keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -2367,8 +2367,8 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 4312)" class="layer-FN_DPI_1000">
-<text x="0" y="28" class="label" id="FN_DPI_1000">FN_DPI_1000:</text>
+<g transform="translate(30, 4312)" class="layer-FN_DPI_600">
+<text x="0" y="28" class="label" id="FN_DPI_600">FN_DPI_600:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 70)" class="key trans keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -2503,7 +2503,7 @@ text.layer-label { fill: #7ccdfd; font-weight: bold; }
 </g>
 <g transform="translate(630, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;dpi_1000_…</tspan></text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;dpi_600_t…</tspan></text>
 </g>
 <g transform="translate(686, 182)" class="key trans keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
