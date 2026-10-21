@@ -38,8 +38,8 @@ layers:
   - FSLH
   - Shift
   - Space
-  - Cmd
   - Alt
+  - Cmd
   - Alt
   - Enter
   LINUX:
