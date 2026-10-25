@@ -1,0 +1,7 @@
+config CHARYBDIS_TRACKBALL_DIAGNOSTICS
+	bool "Charybdis trackball USB/BLE input diagnostics"
+	default n
+	help
+	  Adds low-overhead counters around the trackball input report and BLE
+	  mouse-report producer paths. This is intended only for an explicit
+	  diagnostic build with deferred logging enabled.

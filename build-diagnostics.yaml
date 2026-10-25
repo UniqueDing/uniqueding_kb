@@ -1,0 +1,19 @@
+include:
+  - board: nice_nano_v2
+    shield: charybdis_right
+    artifact-name: charybdis_right-usb-log-diag
+    snippet: zmk-usb-logging
+    cmake-args: >-
+      -DZMK_EXTRA_MODULES=${GITHUB_WORKSPACE}/diagnostics
+      -DCONFIG_CHARYBDIS_TRACKBALL_DIAGNOSTICS=y
+      -DCONFIG_ZMK_USB=n
+      -DCONFIG_ZMK_STUDIO_TRANSPORT_UART=n
+      -DCONFIG_ZMK_STUDIO=y
+      -DCONFIG_ZMK_STUDIO_TRANSPORT_BLE=y
+      -DCONFIG_ZMK_LOGGING_MINIMAL=y
+      -DCONFIG_ZMK_LOG_LEVEL_OFF=y
+      -DCONFIG_LOG_DEFAULT_LEVEL=0
+      -DCONFIG_INPUT_EVENT_DUMP=n
+      -DCONFIG_INPUT_LOG_LEVEL_OFF=y
+      -DCONFIG_LOG_MODE_DEFERRED=y
+      -DCONFIG_LOG_BLOCK_IN_THREAD=n

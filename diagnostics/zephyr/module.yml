@@ -1,0 +1,4 @@
+name: charybdis-trackball-diagnostics
+build:
+  cmake: .
+  kconfig: Kconfig

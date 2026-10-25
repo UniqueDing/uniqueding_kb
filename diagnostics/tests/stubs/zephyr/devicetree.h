@@ -1,0 +1,7 @@
+#ifndef TEST_ZEPHYR_DEVICETREE_H
+#define TEST_ZEPHYR_DEVICETREE_H
+
+#define DT_NODELABEL(name) DT_NODELABEL_##name
+#define DT_NODE_EXISTS(node) 1
+
+#endif
