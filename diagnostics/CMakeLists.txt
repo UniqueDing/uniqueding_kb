@@ -46,14 +46,27 @@ endif()
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
 function(charybdis_diag_git_revision output_var source_dir description)
+  # On CI (container jobs), checked-out files are owned by the host runner UID
+  # while the build runs as a different container user. Git's safe.directory
+  # protection then rejects rev-parse. safe.directory cannot be passed via -c
+  # or GIT_CONFIG_* command-line parameters, but GIT_CONFIG_GLOBAL is honored;
+  # point it at a minimal config so the checkout can be identified. The check
+  # stays fail-closed: a missing git, missing HEAD, or non-repository still
+  # fails with the captured stderr.
+  set(diag_git_config "${CMAKE_BINARY_DIR}/charybdis-diag-git-global-config")
+  if(NOT EXISTS "${diag_git_config}")
+    file(WRITE "${diag_git_config}" "[safe]\n\tdirectory = *\n")
+  endif()
+  set(ENV{GIT_CONFIG_GLOBAL} "${diag_git_config}")
   execute_process(
     COMMAND git -C "${source_dir}" rev-parse --verify --short=12 HEAD
     RESULT_VARIABLE git_result
     OUTPUT_VARIABLE git_revision
     OUTPUT_STRIP_TRAILING_WHITESPACE
-    ERROR_QUIET)
+    ERROR_VARIABLE git_error
+    ERROR_STRIP_TRAILING_WHITESPACE)
   if(NOT git_result EQUAL 0 OR git_revision STREQUAL "")
-    message(FATAL_ERROR "Diagnostics require a real git HEAD for ${description}: ${source_dir}")
+    message(FATAL_ERROR "Diagnostics require a real git HEAD for ${description}: ${source_dir} (git exit ${git_result}: ${git_error})")
   endif()
   set(${output_var} "${git_revision}" PARENT_SCOPE)
 endfunction()
